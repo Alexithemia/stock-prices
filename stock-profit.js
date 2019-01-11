@@ -24,8 +24,8 @@ function checkIfProfit() {
   let sell = 0;
   for (let i = 0; i < prices.length; i++) {
     for (let j = i; j < prices.length; j++) {
-      if ((prices[i] - prices[j]) > profit) {
-        profit = prices[i] - prices[j];
+      if ((prices[j] - prices[i]) > profit) {
+        profit = prices[j] - prices[i];
         buy = prices[i];
         sell = prices[j];
       }
@@ -34,7 +34,7 @@ function checkIfProfit() {
   if (profit > 0) {
     hasProfit.innerHTML = 'buy at ' + buy + ' sell at ' + sell + " for a profit of " + profit;
   } else {
-    hasProfit.innerHTML = 'no profit'
+    hasProfit.innerHTML = 'no profit';
   }
 }
 
